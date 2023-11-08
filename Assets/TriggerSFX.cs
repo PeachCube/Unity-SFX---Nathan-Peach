@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class TriggerSFX : MonoBehaviour
 {
-
     public AudioSource source;
-
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("something collided");
-        source.Play();
+        if (other.CompareTag("Player"))
+        {
+            source.Play();
+        } 
     }
 }
